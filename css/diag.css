@@ -1,0 +1,179 @@
+#diag {
+  min-height: 80vh;
+  max-width: 1240px;
+  margin: auto;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'acumin pro','Roboto', sans-serif;
+  letter-spacing: .2px;
+}
+#diag section {
+	position: relative;
+	margin: 0 80px;
+  max-width: 460px;
+	width: calc(100% - 40px);
+  padding: 20px 0;
+	overflow: hidden;
+
+  cursor: default;
+}
+#diag section .intro h2 {
+  color: #ccd7de;
+
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 80px;
+  letter-spacing: .8px;
+
+  transform: translateY(42px);
+  transition: all .4s ease;
+}
+#diag section .intro p {
+  position: relative;
+  margin-bottom: 40px;
+
+  color: #46525a;
+  font-weight: 600;
+}
+#diag section:hover .intro h2 {
+  transform: translateY(6px);
+}
+#diag section .wrap {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	max-width: 460px;
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+
+	-webkit-padding-start: 0;
+  border-radius: 2px;
+}
+
+#diag section .wrap li {
+	max-width: 480px;
+	width: auto;
+	list-style: none;
+  padding-top: 3px;
+
+  border-bottom: 2px solid #edf0f4;
+}
+#diag section .wrap li:first-of-type {
+  border-top: 2px solid #edf0f4;
+}
+#diag section .wrap .article a {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+#diag section .wrap .article {
+	transition: all .2s ease;
+}
+
+#diag section .wrap .article a h4,
+#diag section .wrap .article a span {
+  line-height: 43px;
+  opacity: .6;
+}
+
+#diag section .wrap .article a h4 {
+	transition: all .3s ease;
+  font-weight: 600;
+
+}
+#diag section .wrap .article:hover a h4 {
+	transform: translateX(9px);
+	color: #3f5464;
+  opacity: 1;
+}
+
+#more {
+  position: absolute;
+  display: block;
+  bottom: 0vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 300px;
+  padding: 0 40px;
+  text-align: center;
+}
+#more p, #more span {
+  display: inline-block;
+
+  line-height: 80px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+#more p {
+  opacity: .6;
+  margin-right: 6px;
+}
+#more span {
+  color: #46525a;
+}
+#more img {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% - -2px));
+
+  width: 80px;
+  opacity: .4;
+}
+#more:hover p, #more:hover span {
+  animation: shake .8s ease-in-out;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-20px); }
+  40%  { transform: translateX(15px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+@media screen and (max-width: 1250px) {
+  #diag {
+    min-height: 80vh;
+    padding-bottom: 10vh;
+  }
+  #diag section {
+    margin: 5vh 40px 0;
+  }
+}
+@media screen and (max-width: 1129px) {
+  #diag {
+    flex-flow: column wrap;
+  }
+  #diag section {
+    margin: 0 auto 0;
+  }
+  #more {
+    padding: 0;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 460px) {
+  #diag section .intro h2 {
+    font-size: 40px;
+    transform: translateY(42px);
+  }
+  #diag {
+    min-height: 100vh;
+    padding-bottom: 25vh;
+  }
+  #more {
+    bottom: 5vh;
+  }
+}
